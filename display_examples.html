@@ -7515,8 +7515,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Model-comparisons-with-audio-examples">Model comparisons with audio examples<a class="anchor-link" href="#Model-comparisons-with-audio-examples">¶</a></h1><p>Here we compare selected audio examples for the scenarios: matched DNS with no reverberation, mismatched VoiceBank+DEMAND training to DNS with no reverberation testing, and mismatched DNS training to VoiceBank+DEMAND testing.</p>
+<h1 id="Model-comparisons-with-audio-examples">Model comparisons with audio examples<a class="anchor-link" href="#Model-comparisons-with-audio-examples">¶</a></h1><p>This page contains audio examples for our paper titled "On The Generalization Ability Of Complex-Valued Variational U-Networks For Single-Channel Speech Enhancement". The preprint manuscript is submitted to IEEE Transactions on Audio, Speech and Language Processing.</p>
+<h4 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">¶</a></h4><p>The paper focuses on the evaluation of performance in dataset mismatched conditions. We train our models on either the Microsoft Deep Noise Suppression Challenge 2020 Dataset, or on VoiceBank+DEMAND, and evaluate their performance on the other dataset.</p>
+<h4 id="Chosen-examples">Chosen examples<a class="anchor-link" href="#Chosen-examples">¶</a></h4><p>Here we present selected audio examples for the scenarios: matched DNS with no reverberation, mismatched VoiceBank+DEMAND training to DNS with no reverberation testing, and mismatched DNS training to VoiceBank+DEMAND testing.</p>
 <p>We selected two examples for speech-like noise, specifically babble noise with a male and a female target speaker, and two non-speech noise types from the DNS test set. From the VoiceBank+DEMAND corpus, we chose a male speaker with music noise and a female speaker with babble noise. Our aim was to choose files with a noisy mixture SNR of approximately 5 dB. However, the selection of non-speech noise examples was constrained by the inherent randomness of the noise distribution within our test sets, specifically for the VoiceBank+DEMAND corpus.</p>
+<p>The two models chosen for these files are both our own U-Networks: the CU-Net and CVU-Net. Both are complex-valued U-Networks, but the CVU-Net incorporates a probabilistic latent space model, which is our investigative focus. For comparison, the CU-Net follows the same architecture, but uses a "standard" latent space model consisting of two feedforward layers - one to reduce dimensionality and one to increase it again; the classic bottleneck model.</p>
 </div>
 </div>
 </div>
@@ -7538,7 +7541,7 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
 <h3>Matched CU-Net de-noised audio</h3>
 <img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_170.png" style="width: 600px; height: auto;"/>
@@ -7609,7 +7612,7 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
 <h3>Matched CU-Net de-noised audio</h3>
 <img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_255.png" style="width: 600px; height: auto;"/>
@@ -7680,7 +7683,7 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
 <h3>Matched CU-Net de-noised audio</h3>
 <img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_175.png" style="width: 600px; height: auto;"/>
@@ -7751,7 +7754,7 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
 <h3>Matched CU-Net de-noised audio</h3>
 <img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_147.png" style="width: 600px; height: auto;"/>
