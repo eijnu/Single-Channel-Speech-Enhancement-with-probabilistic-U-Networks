@@ -7515,11 +7515,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Model-comparisons-with-audio-examples">Model comparisons with audio examples<a class="anchor-link" href="#Model-comparisons-with-audio-examples">¶</a></h1><p>This page contains audio examples for our paper titled "On The Generalization Ability Of Complex-Valued Variational U-Networks For Single-Channel Speech Enhancement". The preprint manuscript is submitted to IEEE Transactions on Audio, Speech and Language Processing.</p>
-<h4 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">¶</a></h4><p>The paper focuses on the evaluation of performance in dataset mismatched conditions. We train our models on either the Microsoft Deep Noise Suppression Challenge 2020 Dataset, or on VoiceBank+DEMAND, and evaluate their performance on the other dataset.</p>
-<h4 id="Chosen-examples">Chosen examples<a class="anchor-link" href="#Chosen-examples">¶</a></h4><p>Here we present selected audio examples for the scenarios: matched DNS with no reverberation, mismatched VoiceBank+DEMAND training to DNS with no reverberation testing, and mismatched DNS training to VoiceBank+DEMAND testing.</p>
+<h1 id="Model-comparisons-with-audio-examples">Model comparisons with audio examples<a class="anchor-link" href="#Model-comparisons-with-audio-examples">¶</a></h1><p>This page contains audio examples for the paper "On the Generalization Ability of Complex-Valued Variational U-Networks for Single-Channel Speech Enhancement,", E. J. Nustede and J. Anemüller, in IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 32, pp. 3838-3849, 2024, doi: 10.1109/TASLP.2024.3444492.</p>
+<h4 id="Method">Method<a class="anchor-link" href="#Method">¶</a></h4><p>The paper focuses on the inclusion of a probabilistic latent space model in a U-Network for single-channel speech enhancement. We evaluate our model, the CVU-Net, and compare it with several other versions. On this page, we compare the CVU-Net with an identical model, that does not include a probabilistic latent space model, so it is only a complex U-Network, called CU-Net. Both models are trained on the magnitude and phase of the audio signals. The evaluation is done in terms of SI-SDR, PESQ and STOI, but only SI-SDR is reported here. To assess the adaptability of the models, we employ them in so-called dataset mismatched conditions. First, we train our models on either the Microsoft Deep Noise Suppression Challenge 2020 Dataset, or on VoiceBank+DEMAND, then evaluate their performance on the other dataset, that was not used for training.</p>
+<h4 id="Chosen-examples">Chosen examples<a class="anchor-link" href="#Chosen-examples">¶</a></h4><p>Here we present selected audio examples for the scenarios: mismatched VoiceBank+DEMAND training to DNS with no reverberation testing, and mismatched DNS training to VoiceBank+DEMAND testing. For comparison, we also show the matched conditions, i.e., the models are trained on the same dataset that they are tested on - the test data is separate from the training data in any case.</p>
 <p>We selected two examples for speech-like noise, specifically babble noise with a male and a female target speaker, and two non-speech noise types from the DNS test set. From the VoiceBank+DEMAND corpus, we chose a male speaker with music noise and a female speaker with babble noise. Our aim was to choose files with a noisy mixture SNR of approximately 5 dB. However, the selection of non-speech noise examples was constrained by the inherent randomness of the noise distribution within our test sets, specifically for the VoiceBank+DEMAND corpus.</p>
-<p>The two models chosen for these files are both our own U-Networks: the CU-Net and CVU-Net. Both are complex-valued U-Networks, but the CVU-Net incorporates a probabilistic latent space model, which is our investigative focus. For comparison, the CU-Net follows the same architecture, but uses a "standard" latent space model consisting of two feedforward layers - one to reduce dimensionality and one to increase it again; the classic bottleneck model.</p>
 </div>
 </div>
 </div>
@@ -7530,7 +7529,8 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Male-speaker-with-wind-noise-from-the-DNS-test-dataset">Male speaker with wind noise from the DNS test dataset<a class="anchor-link" href="#Male-speaker-with-wind-noise-from-the-DNS-test-dataset">¶</a></h3>
+<h2 id="Evaluation-on-DNS-dataset-test-files">Evaluation on DNS dataset test files<a class="anchor-link" href="#Evaluation-on-DNS-dataset-test-files">¶</a></h2><hr/>
+<h3 id="The-shown,-mismatched,-examples-in-this-section-were-trained-on-Voicebank+DEMAND-and-evaluated-on-DNS-data,-while-the-matched-are-trained-and-evaluated-and-the-DNS-dataset.">The shown, mismatched, examples in this section were trained on Voicebank+DEMAND and evaluated on DNS data, while the matched are trained and evaluated and the DNS dataset.<a class="anchor-link" href="#The-shown,-mismatched,-examples-in-this-section-were-trained-on-Voicebank+DEMAND-and-evaluated-on-DNS-data,-while-the-matched-are-trained-and-evaluated-and-the-DNS-dataset.">¶</a></h3><h3 id="Example-1:-Male-Speaker-with-Wind-noise.">Example 1: Male Speaker with Wind noise.<a class="anchor-link" href="#Example-1:-Male-Speaker-with-Wind-noise.">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7543,40 +7543,40 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
-<h3>Matched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_170.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-norev/cunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Matched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_170.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_170.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/cvunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_170.png" style="width: 600px; height: auto;"/>
+<h3>Matched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_170.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
+<source src="audio_examples/dns-norev/cunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_170.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_170.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/cvunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_170.png" style="width: 900px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_filedid170.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_fileid_170.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/noisy_fileid_170.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7584,7 +7584,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_filedid170.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_fileid_170.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/clean_clnsp205_wind_407027_1_snr1_tl-24_fileid_170.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7601,7 +7601,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Male-speaker-with-babble-noise-from-the-DNS-test-dataset">Male speaker with babble noise from the DNS test dataset<a class="anchor-link" href="#Male-speaker-with-babble-noise-from-the-DNS-test-dataset">¶</a></h3>
+<h3 id="Example-2:-Male-speaker-with-babble-noise">Example 2: Male speaker with babble noise<a class="anchor-link" href="#Example-2:-Male-speaker-with-babble-noise">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7614,40 +7614,40 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
-<h3>Matched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_255.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-norev/cunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Matched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_255.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_255.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/cvunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_255.png" style="width: 600px; height: auto;"/>
+<h3>Matched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_255.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
+<source src="audio_examples/dns-norev/cunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_255.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_255.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/cvunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_255.png" style="width: 900px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_filedid255.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_fileid_255.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/noisy_fileid_255.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7655,7 +7655,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_filedid255.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_fileid_255.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/clean_clnsp50_babble_188218_24_snr4_tl-29_fileid_255.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7672,7 +7672,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Female-speaker-with-vacuum-cleaner-noise-from-the-DNS-test-dataset">Female speaker with vacuum cleaner noise from the DNS test dataset<a class="anchor-link" href="#Female-speaker-with-vacuum-cleaner-noise-from-the-DNS-test-dataset">¶</a></h3>
+<h3 id="Example-3:-Female-speaker-with-vacuum-cleaner-noise">Example 3: Female speaker with vacuum cleaner noise<a class="anchor-link" href="#Example-3:-Female-speaker-with-vacuum-cleaner-noise">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7685,40 +7685,40 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
-<h3>Matched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_175.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-norev/cunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Matched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_175.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_175.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/cvunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_175.png" style="width: 600px; height: auto;"/>
+<h3>Matched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_175.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
+<source src="audio_examples/dns-norev/cunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_175.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_175.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/cvunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_175.png" style="width: 900px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_filedid175.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_fileid_175.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/noisy_fileid_175.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7726,7 +7726,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_filedid175.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_fileid_175.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/clean_clnsp257_vacuum_273194_2_snr4_tl-18_fileid_175.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7743,7 +7743,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Female-speaker-with-babble-noise-from-the-DNS-test-dataset">Female speaker with babble noise from the DNS test dataset<a class="anchor-link" href="#Female-speaker-with-babble-noise-from-the-DNS-test-dataset">¶</a></h3>
+<h3 id="Example-4:-Female-speaker-with-babble-noise">Example 4: Female speaker with babble noise<a class="anchor-link" href="#Example-4:-Female-speaker-with-babble-noise">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7756,40 +7756,40 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; box-sizing: border-box; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="text-align: center;">
-<h3>Matched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_147.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-norev/cunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Matched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_147.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-norev/cvunet-maph/cvunet-maph_single_fileid_147.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/cvunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_147.png" style="width: 600px; height: auto;"/>
+<h3>Matched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-norev/cunet-maph/cunet-maph_single_fileid_147.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
+<source src="audio_examples/dns-norev/cunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_147.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/cvunet-maph/cvunet-maph_single_fileid_147.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/cvunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/cunet-maph/cunet-maph_single_fileid_147.png" style="width: 900px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/voice-dns-norev/cunet-maph/clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_filedid147.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/voice-dns-norev/noisy_fileid_147.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-norev/noisy_fileid_147.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7797,7 +7797,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_filedid147.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/voice-dns-norev/clean_fileid_147.png" style="width: 900px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/voice-dns-norev/clean_clnsp25_babble_188218_21_snr5_tl-25_fileid_147.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7814,7 +7814,8 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Training-on-the-DNS-dataset-and-evaluating-on-VoiceBank+DEMAND">Training on the DNS dataset and evaluating on VoiceBank+DEMAND<a class="anchor-link" href="#Training-on-the-DNS-dataset-and-evaluating-on-VoiceBank+DEMAND">¶</a></h1>
+<h2 id="Evaluation-on-VoiceBank+DEMAND-test-files">Evaluation on VoiceBank+DEMAND test files<a class="anchor-link" href="#Evaluation-on-VoiceBank+DEMAND-test-files">¶</a></h2><hr/>
+<h3 id="The-following-mismatched-examples-show-the-performance,-when-the-models-are-trained-on-the-DNS-dataset-and-evaluated-on-VoiceBank+DEMAND-instead.-For-comparison,-the-matched-scenario-is-included,-where-the-models-were-trained-and-evaluated-on-the-corresponding-VoiceBank+DEMAND-dataset.">The following mismatched examples show the performance, when the models are trained on the DNS dataset and evaluated on VoiceBank+DEMAND instead. For comparison, the matched scenario is included, where the models were trained and evaluated on the corresponding VoiceBank+DEMAND dataset.<a class="anchor-link" href="#The-following-mismatched-examples-show-the-performance,-when-the-models-are-trained-on-the-DNS-dataset-and-evaluated-on-VoiceBank+DEMAND-instead.-For-comparison,-the-matched-scenario-is-included,-where-the-models-were-trained-and-evaluated-on-the-corresponding-VoiceBank+DEMAND-dataset.">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7825,7 +7826,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Male-speaker-with-music-and-background-rustling-noise-from-the-Voicebank+DEMAND-corpus">Male speaker with music and background rustling noise from the Voicebank+DEMAND corpus<a class="anchor-link" href="#Male-speaker-with-music-and-background-rustling-noise-from-the-Voicebank+DEMAND-corpus">¶</a></h3>
+<h3 id="Example-1:-Male-speaker-with-music-and-background-rustling-noise">Example 1: Male speaker with music and background rustling noise<a class="anchor-link" href="#Example-1:-Male-speaker-with-music-and-background-rustling-noise">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7838,24 +7839,24 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp232_160.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-to-voice/cunet-maph/p232_160.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp232_160.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp232_160.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/cvunet-maph/p232_160.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp232_160.png" style="width: 600px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/dns-to-voice/cunet-maph/p232_160.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_filedidp232_160.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_fileidp232_160.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/noisy_p232_160.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7863,7 +7864,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/clean_filedidp232_160.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/dns-to-voice/clean_fileidp232_160.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/clean_p232_160.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7880,7 +7881,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Female-speaker-with-music-from-the-Voicebank+DEMAND-corpus">Female speaker with music from the Voicebank+DEMAND corpus<a class="anchor-link" href="#Female-speaker-with-music-from-the-Voicebank+DEMAND-corpus">¶</a></h3>
+<h3 id="Example-2:-Female-speaker-with-music">Example 2: Female speaker with music<a class="anchor-link" href="#Example-2:-Female-speaker-with-music">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7893,24 +7894,24 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp257_430.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-to-voice/cunet-maph/p257_430.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp257_430.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp257_430.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/cvunet-maph/p257_430.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp257_430.png" style="width: 600px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/dns-to-voice/cunet-maph/p257_430.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_filedidp257_430.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_fileidp257_430.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/noisy_p257_430.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7918,7 +7919,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/clean_filedidp257_430.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/dns-to-voice/clean_fileidp257_430.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/clean_p257_430.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7935,7 +7936,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Female-speaker-with-babble-noise-from-the-Voicebank+DEMAND-corpus">Female speaker with babble noise from the Voicebank+DEMAND corpus<a class="anchor-link" href="#Female-speaker-with-babble-noise-from-the-Voicebank+DEMAND-corpus">¶</a></h3>
+<h3 id="Example-3:-Female-speaker-with-babble-noise">Example 3: Female speaker with babble noise<a class="anchor-link" href="#Example-3:-Female-speaker-with-babble-noise">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7948,24 +7949,24 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
 <div style="text-align: center;">
-<h3>Mismatched CU-Net de-noised audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp257_411.png" style="width: 600px; height: auto;"/>
-<audio controls="" style="width: 50%; align: center;">
-<source src="audio_examples/dns-to-voice/cunet-maph/p257_411.wav" type="audio/mpeg"/>
-                Your browser does not support the audio element.
-            </audio>
-</div>
-<div style="text-align: center;">
 <h3>Mismatched CVU-Net de-noised audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp257_411.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/cvunet-maph/cvunet-maph_single_fileidp257_411.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/cvunet-maph/p257_411.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
             </audio>
 </div>
 <div style="text-align: center;">
+<h3>Mismatched CU-Net de-noised audio</h3>
+<img alt="Image 2" src="audio_examples/dns-to-voice/cunet-maph/cunet-maph_single_fileidp257_411.png" style="width: 600px; height: auto;"/>
+<audio controls="" style="width: 50%; align: center;">
+<source src="audio_examples/dns-to-voice/cunet-maph/p257_411.wav" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+</div>
+<div style="text-align: center;">
 <h3>Noisy audio</h3>
-<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_filedidp257_411.png" style="width: 600px; height: auto;"/>
+<img alt="Image 1" src="audio_examples/dns-to-voice/noisy_fileidp257_411.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/noisy_p257_411.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
@@ -7973,7 +7974,7 @@ a.anchor-link {
 </div>
 <div style="text-align: center;">
 <h3>Clean audio</h3>
-<img alt="Image 2" src="audio_examples/dns-to-voice/clean_filedidp257_411.png" style="width: 600px; height: auto;"/>
+<img alt="Image 2" src="audio_examples/dns-to-voice/clean_fileidp257_411.png" style="width: 600px; height: auto;"/>
 <audio controls="" style="width: 50%; align: center;">
 <source src="audio_examples/dns-to-voice/clean_p257_411.wav" type="audio/mpeg"/>
                 Your browser does not support the audio element.
